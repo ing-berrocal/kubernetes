@@ -7,7 +7,7 @@ services:
       - "6379:6379"
     networks:
       infra-kubernetes:
-   local-postgres:
+  local-postgres:
     image: postgres:latest
     container_name: pg-local
     ports:
@@ -18,13 +18,13 @@ services:
       POSTGRES_DB: dbtest
     networks:
       infra-kubernetes:
-   local-app-java:
+  local-app-java:
     image: dberrocal/kbn:01
     ports:
       - "80:8080"
     environment:
       - "SPRING_PROFILES_ACTIVE=test1,test2,test3" 
-      - "DATABASE_REDIS_URL=192.168.1.23"
+      - "DATABASE_REDIS_URL=rds"
     networks:
       infra-kubernetes: 
 networks:
