@@ -14,6 +14,15 @@ services:
       - "5432:5432"
     networks:
       infra-kubernetes:
+   local-app-java:
+    image: dberrocal/kbn:01
+    ports:
+      - "80:8080"
+    environment:
+      - "SPRING_PROFILES_ACTIVE=test1,test2,test3" 
+      - "DATABASE_REDIS_URL=192.168.1.23"
+    networks:
+      infra-kubernetes: 
 networks:
   infra-kubernetes:
    
