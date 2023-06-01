@@ -12,6 +12,10 @@ services:
     container_name: pg-local
     ports:
       - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: password
+      POSTGRES_USER: adminpg
+      POSTGRES_DB: dbtest
     networks:
       infra-kubernetes:
    local-app-java:
