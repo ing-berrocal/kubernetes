@@ -7,6 +7,13 @@ services:
       - "6379:6379"
     networks:
       infra-kubernetes:
+   local-postgres:
+    image: postgres:latest
+    container_name: pg-local
+    ports:
+      - "5432:5432"
+    networks:
+      infra-kubernetes:
 networks:
   infra-kubernetes:
    

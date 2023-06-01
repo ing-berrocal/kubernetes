@@ -24,4 +24,12 @@ public class Servicio {
 
         return sb.toString();
     }
+
+    public String getEnvironment(){
+
+        StringBuilder sb = new StringBuilder();
+
+        System.getenv().forEach((o, o2) -> sb.append(String.format("Key: %s, Value: %s\n",o,o2)));
+        return sb.toString();
+    }
 }
