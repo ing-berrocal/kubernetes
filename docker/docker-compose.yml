@@ -1,11 +1,12 @@
 version: "3.9"
 services:
   local-redis:
-    image: redis:laste
+    image: redis:latest
     container_name: rds
-    expose:
+    ports:
       - "6379:6379"
     networks:
       infra-kubernetes:
 networks:
   infra-kubernetes:
+   
