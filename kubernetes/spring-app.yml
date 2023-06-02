@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: spring-test
+spec:
+  containers:
+    - image: dberrocal/kbn:01
+      name: springtest
+      ports:
+        - containerPort: 8080
+          name: http
+          protocol: TCP
