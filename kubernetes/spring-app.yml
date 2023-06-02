@@ -6,6 +6,10 @@ spec:
   containers:
     - image: dberrocal/kbn:01
       name: springtest
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
       ports:
         - containerPort: 8080
           name: http
