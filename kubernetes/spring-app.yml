@@ -6,6 +6,14 @@ spec:
   containers:
     - image: dberrocal/kbn:01
       name: springtest
+       env:
+        # Define the environment variable
+        - name: DATABASE_REDIS_URL # Notice that the case is different here
+                                     # from the key name in the ConfigMap.
+          valueFrom:
+            configMapKeyRef:
+              name: spring-test-configmap  # The ConfigMap this value comes from.
+              key: DATABASE_REDIS_URL # The key to fetch.
       resources:
         limits:
           memory: "128Mi"
